@@ -29,11 +29,11 @@ namespace RealEstateDemo
 
         private void Button_BD(object sender, RoutedEventArgs e)
         {
+
+
             // часть кода для импорта
             /*
             var connection = DBInstance.Get();
-            connection.Gender.Add(new Gender { Code = "м", Name = "мужской" });
-            connection.Gender.Add(new Gender { Code = "ж", Name = "женский" });
             connection.SaveChanges();
 
             string path = @"C:\Users\user\Desktop\ДЭ\Сессия 1\clientservice_a_impor1.csv";
