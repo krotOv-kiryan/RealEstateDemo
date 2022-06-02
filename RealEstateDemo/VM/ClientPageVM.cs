@@ -9,6 +9,8 @@ namespace RealEstateDemo.VM
 {
     public class ClientPageVM : BaseViewModel
     {
+
+        // класс ClientPage.xaml
         /*
         private Client selectedClient;
         public Client SelectedClient
@@ -40,23 +42,41 @@ namespace RealEstateDemo.VM
 
             DeleteClient = new CustomCommand(() =>
             {
-                // Db.Courses.Remove(selectedCourse);
-                // Db.SaveChanges();
-                LoadClients();
+                /*/
+                if (SelectedClient == null)
+                {
+                    System.Windows.MessageBox.Show("Для удаления клиента нужно его выбрать в списке");
+                    return;
+                }
+                if (SelectedClient.CountVisit > 0)
+                {
+                    System.Windows.MessageBox.Show("Невозможно удалить клиента со связями");
+                    return;
+                }
+                DBInstance.Get().Client.Remove(SelectedClient);
+                DBInstance.Get().SaveChanges();
+                */
             });
 
             SaveClient = new CustomCommand(() =>
             {
+                // if (SelectedClient == null)
+                //    return;
+                /*
                 try
                 {
-                    // Db.SaveChanges();
-                    LoadClients();
+                    EditClient.Tag = SelectedTags;
+                    if (EditClient.ID == 0)
+                        DBInstance.Get().Client.Add(EditClient);
+                    else
+                        DBInstance.Get().Entry(client).CurrentValues.SetValues(EditClient);
+                    DBInstance.Get().SaveChanges();
                 }
-                catch (Exception ex)
+                catch (Exception e)
                 {
-                    System.Windows.MessageBox.Show(ex.Message);
-                }
-
+                    MessageBox.Show(e.Message);
+                };
+                */
             });
 
         }

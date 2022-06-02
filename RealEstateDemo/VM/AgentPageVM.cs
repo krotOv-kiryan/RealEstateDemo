@@ -9,6 +9,7 @@ namespace RealEstateDemo.VM
 {
     public class AgentPageVM : BaseViewModel
     {
+        // класс AgentPage.xaml
 
         public AgentPageVM()
         {

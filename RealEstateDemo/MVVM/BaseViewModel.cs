@@ -10,6 +10,7 @@ namespace RealEstateDemo.MVVM
 {
     public class BaseViewModel : INotifyPropertyChanged // написано ручками
     {
+        // изменения свойств.
         public event PropertyChangedEventHandler PropertyChanged;
         protected void SignalChanged([CallerMemberName] string prop = null)
         {

@@ -22,8 +22,10 @@ namespace RealEstateDemo
     /// </summary>
     public partial class MainWindow : Window
     {
+      // static MainWindow window;
         public MainWindow()
         {
+           // window = this;
             InitializeComponent();
             DataContext = new MainVM();
         }
@@ -50,5 +52,25 @@ namespace RealEstateDemo
             }
             */
         }
+
+
+        /*
+        public static void Navigate(Page page)
+        {
+            window.mainFrame.Navigate(page);
+        }
+
+        private void BackPage(object sender, RoutedEventArgs e)
+        {
+            if (mainFrame.CanGoBack)
+                mainFrame.GoBack();
+        }
+
+        private void ForwardPage(object sender, RoutedEventArgs e)
+        {
+            if (mainFrame.CanGoForward)
+                mainFrame.GoForward();
+        }
+        */
     }
 }

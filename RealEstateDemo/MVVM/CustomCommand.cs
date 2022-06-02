@@ -9,6 +9,7 @@ namespace RealEstateDemo.MVVM
 {
     public class CustomCommand : ICommand //написано ручками
     {
+        // события для команд
         public event EventHandler CanExecuteChanged;
         Action action;
 

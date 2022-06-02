@@ -9,7 +9,7 @@ namespace RealEstateDemo.VM
 {
     public class RealEstateObjectsVM : BaseViewModel
     {
-
+        // класс RealEstateObjects.xaml
 
         public RealEstateObjectsVM()
         {
