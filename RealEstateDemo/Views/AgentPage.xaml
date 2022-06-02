@@ -38,7 +38,6 @@
                 <TextBlock  HorizontalAlignment="Center" Text="------------------------------------------------------------"/>
             </StackPanel>
 
-
             <StackPanel Grid.Row="1">
                 <TextBlock Text="id"/>
                 <TextBox Text="{Binding Id}" />
@@ -54,7 +53,6 @@
 
                 <TextBlock Text="Доля от комиссии"/>
                 <TextBox Text="{Binding ShareOfCommission}" />
-
             </StackPanel>
 
             <StackPanel Grid.Row="2">
@@ -63,7 +61,6 @@
                 <Button Content="Удалить" Command="{Binding DeleteAgent}" />
             </StackPanel>
         </Grid>
-
 
     </Grid>
 </Page>

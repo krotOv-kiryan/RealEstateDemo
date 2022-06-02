@@ -1,5 +1,4 @@
-﻿
-using RealEstateDemo.VM;
+﻿using RealEstateDemo.VM;
 using System;
 using System.Collections.Generic;
 using System.IO;

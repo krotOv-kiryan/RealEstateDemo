@@ -24,7 +24,6 @@
                             <ColumnDefinition Width="361*"/>
                         </Grid.ColumnDefinitions>
 
-
                         <ListView ItemsSource="{Binding RealEstateObjects}" SelectedItem="{Binding SelectedRealEstateObject}">
                             <ListView.View>
                                 <GridView>
@@ -80,7 +79,6 @@
 
                                 <TextBlock Text="Координаты"/>
                                 <TextBox Text="{Binding Coordinates}" />
-
                             </StackPanel>
 
                             <StackPanel Grid.Row="2">
