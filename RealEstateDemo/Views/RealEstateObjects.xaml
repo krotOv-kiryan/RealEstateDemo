@@ -1,0 +1,273 @@
+﻿<Page x:Class="RealEstateDemo.Views.RealEstateObjects"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RealEstateDemo.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Объекты недвижимости">
+
+    <Grid>
+
+        <TabControl>
+            <TabItem>
+
+                <TabItem.Header >
+                    <TextBlock Text="Объекты недвижимости"/>
+                </TabItem.Header>
+
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="433*"/>
+                            <ColumnDefinition Width="361*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <ListView ItemsSource="{Binding RealEstateObjects}" SelectedItem="{Binding SelectedRealEstateObject}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="id" DisplayMemberBinding="{Binding id}"/>
+                                    <GridViewColumn Header="Адрес" DisplayMemberBinding="{Binding Adress}"/>
+                                    <GridViewColumn Header="Координаты" DisplayMemberBinding="{Binding Coordinates}"/>
+
+                                    <GridViewColumn Header="Земля">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding Area.id}" DisplayMemberPath="Id"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+
+                                    <GridViewColumn Header="Дом" DisplayMemberBinding="{Binding House}">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding Area.id}" DisplayMemberPath="Id"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+
+                                    <GridViewColumn Header="Квартира" DisplayMemberBinding="{Binding RoomNumber}">
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <ComboBox ItemsSource="{Binding Room.id}" DisplayMemberPath="Id"/>
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0">
+                                <TextBlock Text="Объекты недвижимости" FontSize="24" HorizontalAlignment="Center" FontStyle="Italic"/>
+                                <TextBlock HorizontalAlignment="Center" Text="------------------------------------------------------------------------------"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1">
+                                <TextBlock Text="id"/>
+                                <TextBox Text="{Binding Id}" />
+
+                                <TextBlock Text="Адрес"/>
+                                <TextBox Text="{Binding Adress}" />
+
+                                <TextBlock Text="Координаты"/>
+                                <TextBox Text="{Binding Coordinates}" />
+
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="2">
+                                <Button Content="Добавить" Command="{Binding AddObject}" />
+                                <Button Content="Сохранить" Command="{Binding SaveObject}" />
+                                <Button Content="Удалить" Command="{Binding DeleteObject}" />
+                            </StackPanel>
+                        </Grid>
+
+                    </Grid>
+                </TabItem.Content>
+
+            </TabItem>
+
+
+            <TabItem>
+                <TabItem.Header >
+                    <TextBlock Text="Дом"/>
+                </TabItem.Header>
+
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="433*"/>
+                            <ColumnDefinition Width="361*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <ListView ItemsSource="{Binding RealEstateObjects}" SelectedItem="{Binding SelectedRealEstateObject}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="id" DisplayMemberBinding="{Binding id}"/>
+                                    <GridViewColumn Header="Этажность дома" DisplayMemberBinding="{Binding Adress}"/>
+                                    <GridViewColumn Header="Количества комнат" DisplayMemberBinding="{Binding Coordinates}"/>
+                                    <GridViewColumn Header="Площадь" DisplayMemberBinding="{Binding Area}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0">
+                                <TextBlock Text="Дом" FontSize="24" HorizontalAlignment="Center" FontStyle="Italic"/>
+                                <TextBlock HorizontalAlignment="Center" Text="------------------------------------------------------------------------------"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1">
+                                <TextBlock Text="id"/>
+                                <TextBox Text="{Binding Id}" />
+
+                                <TextBlock Text="Название"/>
+                                <TextBox Text="{Binding Name}" />
+
+                                <TextBlock Text="Количество комнат"/>
+                                <TextBox Text="{Binding HowManyMan}" />
+
+                                <TextBlock Text="Площадь"/>
+                                <TextBox Text="{Binding PloshadJ}" />
+
+                                <Button Content="Добавить дом" Command="{Binding AddHouse}" />
+                                <Button Content="Сохранить" Command="{Binding SaveHouse}" />
+                                <Button Content="Удалить" Command="{Binding DeleteHouse}" />
+                            </StackPanel>
+                        </Grid>
+
+                    </Grid>
+                </TabItem.Content>
+
+            </TabItem>
+
+            <TabItem>
+                <TabItem.Header >
+                    <TextBlock Text="Квартира"/>
+                </TabItem.Header>
+
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="433*"/>
+                            <ColumnDefinition Width="361*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <ListView ItemsSource="{Binding RealEstateObjects}" SelectedItem="{Binding SelectedRealEstateObject}">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="id" DisplayMemberBinding="{Binding id}"/>
+                                    <GridViewColumn Header="Этаж" DisplayMemberBinding="{Binding Adress}"/>
+                                    <GridViewColumn Header="Количество комнат" DisplayMemberBinding="{Binding Coordinates}"/>
+                                    <GridViewColumn Header="Площадь" DisplayMemberBinding="{Binding Area}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0">
+                                <TextBlock Text="Квартира" FontSize="24" HorizontalAlignment="Center" FontStyle="Italic"/>
+                                <TextBlock HorizontalAlignment="Center" Text="------------------------------------------------------------------------------"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1">
+                                <TextBlock Text="id"/>
+                                <TextBox Text="{Binding Id}" />
+
+                                <TextBlock Text="Количество комнат"/>
+                                <TextBox Text="{Binding HowManyMan}" />
+
+                                <TextBlock Text="Площадь"/>
+                                <TextBox Text="{Binding PloshadJ}" />
+
+                                <Button Content="Добавить квартиру" Command="{Binding AddHouse}" />
+                                <Button Content="Сохранить" Command="{Binding SaveHouse}" />
+                                <Button Content="Удалить" Command="{Binding DeleteHouse}" />
+                            </StackPanel>
+                        </Grid>
+
+                    </Grid>
+                </TabItem.Content>
+
+            </TabItem>
+
+            <TabItem>
+                <TabItem.Header >
+                    <TextBlock Text="Земля"/>
+                </TabItem.Header>
+
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="45*"/>
+                            <ColumnDefinition Width="388*"/>
+                            <ColumnDefinition Width="361*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <ListView ItemsSource="{Binding RealEstateObjects}" SelectedItem="{Binding SelectedRealEstateObject}" Grid.ColumnSpan="2">
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="id" DisplayMemberBinding="{Binding id}"/>
+                                    <GridViewColumn Header="Площадь земли" DisplayMemberBinding="{Binding HowManyEarth}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0">
+                                <TextBlock Text="Земля" FontSize="24" HorizontalAlignment="Center" FontStyle="Italic"/>
+                                <TextBlock HorizontalAlignment="Center" Text="------------------------------------------------------------------------------"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="1">
+                                <TextBlock Text="id"/>
+                                <TextBox Text="{Binding Id}" />
+
+                                <TextBlock Text="Площадь"/>
+                                <TextBox Text="{Binding HowManyEarth}" />
+
+                                <Button Content="Добавить" Command="{Binding AddEarth}" />
+                                <Button Content="Сохранить" Command="{Binding SaveEarth}" />
+                                <Button Content="Удалить" Command="{Binding DeleteEarth}" />
+                            </StackPanel>
+                        </Grid>
+
+                    </Grid>
+                </TabItem.Content>
+
+            </TabItem>
+        </TabControl>
+
+
+    </Grid>
+</Page>
+

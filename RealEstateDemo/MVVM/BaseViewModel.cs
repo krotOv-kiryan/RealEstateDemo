@@ -15,5 +15,9 @@ namespace RealEstateDemo.MVVM
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

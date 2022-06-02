@@ -1,6 +1,8 @@
-﻿using RealEstateDemo.VM;
+﻿using RealEstateDemo.db;
+using RealEstateDemo.VM;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,30 +31,24 @@ namespace RealEstateDemo
 
         private void Button_BD(object sender, RoutedEventArgs e)
         {
-
-
             // часть кода для импорта
             /*
             var connection = DBInstance.Get();
-            connection.SaveChanges();
-
-            string path = @"C:\Users\user\Desktop\ДЭ\Сессия 1\clientservice_a_impor1.csv";
+            string path = @"C:\Users\Кирилл\Desktop\Дэмо экзамены\ФНЧ 2018 Недвижимость\Resources\Session 1\clients.csv";
             var rows = File.ReadAllLines(path);
-            var clients = connection.Client.ToList();
-            var services = connection.Service.ToList();
+            var clients = connection.Clients.ToList();
+            var services = connection.Clients.ToList();
             for (int i = 1; i < rows.Length; i++)
             {
-            var cols = rows[i].Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-            var client = clients.First(s => s.LastName == cols[0]);
-            var service = services.First(s => s.Title == cols[2]);
-            connection.ClientService.Add(new ClientService {
-            Client = client,
-            Service = service,
-            StartTime = DateTime.Parse(cols[1])
-            });
+                var cols = rows[i].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                connection.Clients.Add(new Client
+                {
+                    id = i,
+                     = int.Parse(cols[0]),
+                    servicename = cols[1],
+                    price = double.Parse(cols[2].Replace('.', ',')),
+                });
             }
-            connection.SaveChanges();
-
             */
         }
     }
