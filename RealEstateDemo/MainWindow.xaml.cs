@@ -1,4 +1,5 @@
-﻿using RealEstateDemo.VM;
+﻿
+using RealEstateDemo.VM;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,22 +35,26 @@ namespace RealEstateDemo
         {
             // часть кода для импорта
             /*
-            var connection = DBInstance.Get();
-            string path = @"C:\Users\Кирилл\Desktop\Дэмо экзамены\ФНЧ 2018 Недвижимость\Resources\Session 1\clients.csv";
+            RealEstateDemoContext con = new RealEstateDemoContext();
+           
+            string pathAgent = @"C:\Users\kirya\OneDrive\Рабочий стол\Дэмо экзамены\ФНЧ 2018 Недвижимость\Resources\Session 1\agents.csv";
+            string pathClient = @"C:\Users\kirya\OneDrive\Рабочий стол\Дэмо экзамены\ФНЧ 2018 Недвижимость\Resources\Session 1\clients.csv";
+           
             var rows = File.ReadAllLines(path);
-            var clients = connection.Clients.ToList();
-            var services = connection.Clients.ToList();
-            for (int i = 1; i < rows.Length; i++)
+            for (int i = 0; i < rows.Length; i++)
             {
                 var cols = rows[i].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                connection.Clients.Add(new Client
+                con.Add(new Agent
                 {
-                    id = i,
-                     = int.Parse(cols[0]),
-                    servicename = cols[1],
-                    price = double.Parse(cols[2].Replace('.', ',')),
+                    Id = int.Parse(cols[0]),
+                    FirstName = cols[1],
+                    MiddleName = cols[2],
+                    LastName = cols[3],
+                    ShareOfCommission = int.Parse(cols[4])
                 });
             }
+            con.SaveChanges();
+        
             */
         }
 
