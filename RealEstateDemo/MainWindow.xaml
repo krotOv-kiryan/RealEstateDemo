@@ -34,6 +34,6 @@
             <Button Grid.Column="3" Command="{Binding GoToObjects}" Content="Объекты недвижимости" />
         </Grid>
 
-        <Frame Content="{Binding CurrrentPage}" NavigationUIVisibility="Hidden" Grid.Row="1"/>
+        <Frame Content="{Binding CurrentPage}" NavigationUIVisibility="Hidden" Grid.Row="1"/>
     </Grid>
 </Window>

@@ -49,7 +49,7 @@ namespace RealEstateDemo.db
 
                 entity.Property(e => e.FirstName)
                     .HasMaxLength(50)
-                    .HasColumnName("FIrstName");
+                    .HasColumnName("FirstName");
 
                 entity.Property(e => e.LastName).HasMaxLength(50);
 
@@ -70,7 +70,7 @@ namespace RealEstateDemo.db
 
                 entity.Property(e => e.FirstName)
                     .HasMaxLength(50)
-                    .HasColumnName("FIrstName");
+                    .HasColumnName("FirstName");
 
                 entity.Property(e => e.LastName).HasMaxLength(50);
 

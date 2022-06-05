@@ -11,9 +11,11 @@ namespace RealEstateDemo.VM
     {
         // класс RealEstateObjects.xaml
 
+        public List<string> ObjectTypes { get; set; }
         public RealEstateObjectsVM()
         {
 
+            ObjectTypes = new List<string>(new string[] { "Земля", "Квартира" , "Дом" });
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RealEstateDemo.VM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace RealEstateDemo.Views
         public RealEstateObjects()
         {
             InitializeComponent();
+            DataContext = new RealEstateObjectsVM();
         }
     }
 }
